@@ -5,6 +5,9 @@ from tensorflow.keras.layers import GlobalMaxPooling2D,Flatten,Dense,Reshape
 
 import tensorflow.compat.v1
 
+import cv2
+import numpy as np
+from numpy.linalg import norm
 
 
 tf.losses.sparse_softmax_cross_entropy = tf.compat.v1.losses.sparse_softmax_cross_entropy
@@ -20,10 +23,6 @@ model.summary()
 model= tf.keras.Sequential([model, GlobalMaxPooling2D()])
 # #model.add(MaxPooling2D)
 model.summary()
-
-import cv2
-import numpy as np
-from numpy.linalg import norm
 
 img=cv2.imread('dataset-card.jpg',0)
 
