@@ -1,4 +1,4 @@
-![WhatsApp Image 2024-03-15 at 14 32 29_ee65b254](https://github.com/pushti07/STYLE-DECODER/assets/144027532/ac549984-dc60-419d-ab36-98217d54b5ef)# STYLE-DECODER
+# STYLE-DECODER
 
 Style Decoder : A Brief Overview
 
