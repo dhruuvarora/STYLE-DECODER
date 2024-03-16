@@ -54,3 +54,27 @@ result.shape
 normalized=result/norm(result)
 
 normalized.shape
+
+def extract_feature(image_path, model):
+    img=cv2.imread(image_path)
+    img=cv2.resize(img,(224,224))
+    img=np.array(img)
+    expand_img=np.expand_dims(img, axis=0)
+    pre_image=preprocess_input(expand_img)
+    result=model.predict(pre_image).flatten()
+    normalized=result/norm(result)
+
+    return normalized
+
+
+extract_feature('C:\One Drive Data\Desktop\dataset-card.jpg',model)
+
+import os
+from tqdm import tqdm
+
+filename=[]
+feature_list=[]
+for file in os.listdir(r'C:\JupyterNotebook\Dataset\data\Images'):
+    filename.append(os.path.join(r'C:\JupyterNotebook\Dataset\data\Images',file))
+
+filename[0:5]
