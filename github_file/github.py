@@ -9,6 +9,7 @@ import cv2
 import numpy as np
 from numpy.linalg import norm
 
+import pickle
 
 tf.losses.sparse_softmax_cross_entropy = tf.compat.v1.losses.sparse_softmax_cross_entropy
 
@@ -78,3 +79,9 @@ for file in os.listdir(r'C:\JupyterNotebook\Dataset\data\Images'):
     filename.append(os.path.join(r'C:\JupyterNotebook\Dataset\data\Images',file))
 
 filename[0:5]
+
+for file in tqdm(filename):
+    feature_list.append(extract_feature(file,model))
+
+pickle.dump(feature_list, open('featurevector.pkl', 'wb'))
+pickle.dump(filename, open('filenames.pkl', 'wb'))
