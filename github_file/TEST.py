@@ -33,5 +33,18 @@ normalized=result/norm(result)
 
     # return normalized
 
+neighbors=NearestNeighbors(n_neighbors=6, algorithm="brute", metric="euclidean")
+neighbors.fit(feature_list)
 
+distance, indices= neighbors.kneighbors([normalized])
+
+print("\n")
+print(indices)
+print("\n")
+
+
+for file in indices [0][1:5]:
+    imgName=cv2.imread(filename[file])
+    cv2.imshow("Frame", cv2.resize(imgName, (640,480)))
+    cv2.waitKey(0)
 
